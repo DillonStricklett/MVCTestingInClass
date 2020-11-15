@@ -113,7 +113,7 @@ namespace MVCTestingSample.Controllers.Tests
             var controller = new ProductsController(mockRepo.Object);
             var invalidProduct = new Product()
             {
-                Name = null, // Name is required to be valid
+                Name = string.Empty, // Name is required to be valid
                 Price = "9.99",
                 ProductId = 1
             };
