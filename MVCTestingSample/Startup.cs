@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MVCTestingSample.Models;
+using MVCTestingSample.Models.Interfaces;
 
 namespace MVCTestingSample
 {
@@ -30,6 +31,8 @@ namespace MVCTestingSample
                 .GetConnectionString("ProductTestingDb")));
 
             services.AddControllersWithViews();
+
+            services.AddScoped<IProductRepository, EFProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
